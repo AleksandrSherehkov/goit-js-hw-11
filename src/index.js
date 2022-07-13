@@ -44,8 +44,8 @@ const onFormSubmit = async e => {
 
   if (imageApi.searchQuery === '') {
     Notify.failure('Sorry, enter a query in the search field.', {
-      width: '500px',
-      fontSize: '28px',
+      width: '300px',
+      fontSize: '16px',
     });
     return;
   }
@@ -85,8 +85,8 @@ function notificationToltalHits() {
   const totalHits = imageApi.totalHitsApi;
   if (totalHits > 0) {
     Notify.success(`Hooray! We found ${totalHits} images.`, {
-      width: '500px',
-      fontSize: '28px',
+      width: '300px',
+      fontSize: '16px',
     });
   }
 }
@@ -95,8 +95,8 @@ function checkDataLength(data) {
   if (data.length === 0) {
     refs.loadMoreBtn.classList.add('is-hidden');
     Notify.failure('Sorry, there are no images matching your search query. Please try again.', {
-      width: '500px',
-      fontSize: '28px',
+      width: '300px',
+      fontSize: '16px',
     });
     Loading.remove();
   }
@@ -106,8 +106,8 @@ function cheсkRestHits() {
   if (imageApi.totalHitsApi === 0) return;
   if (imageApi.totalHitsApi <= imageApi.receivedHitsApi) {
     Notify.warning("We're sorry, but you've reached the end of search results.", {
-      width: '500px',
-      fontSize: '28px',
+      width: '300px',
+      fontSize: '16px',
     });
     refs.loadMoreBtn.classList.add('is-hidden');
   }
